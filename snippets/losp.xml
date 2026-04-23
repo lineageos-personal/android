@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="losp"
+          fetch="https://github.com/lineageos-personal"
+          sync-c="true"
+          sync-j="4"
+          revision="refs/heads/lineage-23.2" />
+
+  <remote name="gitlab"
+          fetch="https://gitlab.com/blazerpaul15"
+          sync-c="true"
+          sync-j="4"
+          revision="refs/heads/lineage-23.2" />
+
+  <project path="build/make" name="android_build" groups="pdk,sysui-studio" remote="losp" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <project path="axion-sdk" name="android_axion-sdk" remote="losp" />
+  <remove-project name="LineageOS/android_bionic" />
+  <project path="bionic" name="android_bionic" groups="pdk" remote="losp" />
+  <remove-project name="LineageOS/android_build_release" />
+  <project path="build/release" name="android_build_release" groups="pdk,tradefed,sysui-studio" remote="losp" />
+  <remove-project name="LineageOS/android_build_soong" />
+  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed,sysui-studio" remote="losp" />
+  <remove-project name="LineageOS/android_device_lineage_sepolicy" />
+  <project path="device/lineage/sepolicy" name="android_device_lineage_sepolicy" remote="losp" />
+  <remove-project name="LineageOS/android_frameworks_av" />
+  <project path="frameworks/av" name="android_frameworks_av" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="losp" />
+  <remove-project name="LineageOS/android_frameworks_base" />
+  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="losp" />
+  <remove-project name="LineageOS/android_frameworks_libs_systemui" />
+  <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="losp" />
+  <remove-project name="LineageOS/android_frameworks_native" />
+  <project path="frameworks/native" name="android_frameworks_native" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="losp" />
+  <remove-project name="LineageOS/android_lineage-sdk" />
+  <project path="lineage-sdk" name="android_lineage-sdk" remote="losp" />
+  <remove-project name="LineageOS/android_packages_apps_Launcher3" />
+  <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" groups="pdk-fs,sysui-studio" remote="losp" />
+  <project path="packages/apps/AppLocker" name="android_packages_apps_AppLocker" remote="losp" />
+  <project path="packages/apps/DolbyAtmos" name="android_packages_apps_DolbyAtmos" remote="losp" />
+  <remove-project name="LineageOS/android_packages_apps_LineageParts" />
+  <project path="packages/apps/LineageParts" name="android_packages_apps_LineageParts" remote="losp" />
+  <project path="packages/apps/ParanoidSense" name="android_packages_apps_ParanoidSense" remote="losp" />
+  <project path="packages/apps/Sandbox" name="android_packages_apps_Sandbox" remote="losp" />
+  <remove-project name="LineageOS/android_packages_apps_Settings" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="losp" />
+  <project path="packages/services/AxQuickLook" name="android_packages_services_AxQuickLook" remote="losp" />
+  <project path="packages/services/OmniJaws" name="android_packages_services_OmniJaws" groups="pdk-cw-fs,pdk-fs" remote="losp" />
+  <remove-project name="LineageOS/android_packages_services_Telecomm" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="losp" />
+  <remove-project name="LineageOS/android_system_core" />
+  <project path="system/core" name="android_system_core" groups="pdk" remote="losp" />
+  <remove-project name="LineageOS/android_system_sepolicy" />
+  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" remote="losp" />
+  <project path="vendor/custom-preference" name="android_vendor_custom-preference" remote="losp" />
+  <remove-project name="LineageOS/android_vendor_lineage" />
+  <project path="vendor/lineage" name="android_vendor_lineage" remote="losp" />
+  <project path="vendor/gms" name="android_vendor_gms" remote="gitlab" />
+</manifest>
